@@ -11,8 +11,26 @@ function App() {
     console.log("clikcked", counter)
     if(counter<=19)
     {
-      counter = counter+1 
+      counter = counter+1
       setCounter(counter)
+      setCounter(counter)
+      setCounter(counter) 
+
+//       --------Important details about React state updating:-------
+// React's setState (like setCounter) is asynchronous and batched.
+// Calling setCounter(counter) multiple times with the same value won't cause multiple
+//  increments or multiple re-renders because React batches updates.
+// So calling setCounter(counter) 3 times with the same value is redundant and has
+//  the same effect as calling it once.
+// and final setCounter called value is considered  
+// React will process these calls together and only apply the final state once.
+
+
+// Use the updater function form if your new state depends on the previous state:
+// ----------   setCounter(prev => prev + 1); --------------
+// This guarantees the increment is based on the latest value, even if multiple 
+// state updates happen asynchronously.
+
     }
   }
 
