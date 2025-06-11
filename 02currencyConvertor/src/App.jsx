@@ -20,7 +20,7 @@ function App() {
   const swap = () => {
      setFrom(prevFrom => {
     setTo(prevFrom); // use the current `from` as new `to`
-    return to;        // use the current `to` as new `from`
+    return to;       // use the current `to` as new `from`
   });
     setConvertedAmount(amount)
     setAmount(convertedAmount)
